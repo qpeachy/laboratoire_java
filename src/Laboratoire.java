@@ -20,10 +20,12 @@ public class Laboratoire {
         s1.evolue();
         s2.evolue();
         s3.evolue();
-        
+       
         System.out.println(s1);
         System.out.println(s2);
         System.out.println(s3);
+
+        System.out.println(Souris.Compteur());
                 
     }
     

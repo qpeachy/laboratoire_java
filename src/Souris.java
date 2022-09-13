@@ -7,6 +7,7 @@ public class Souris {
     private int _age;
     private int _esperanceVie;
     private boolean _clonee;
+    private static int _compteur =  0;
 
 
     public int get_poids() {
@@ -64,6 +65,7 @@ public class Souris {
         this._esperanceVie = esperanceVie;
         this._clonee = false;
         System.out.println("Une nouvelle souris!");
+        _compteur +=1;
     }
 
     Souris(int poids, String couleur, int age) {
@@ -73,6 +75,7 @@ public class Souris {
         this._esperanceVie = ESPERANCE_VIE_DEFAULT; 
         this._clonee = false;
         System.out.println("Une nouvelle souris!");
+        _compteur +=1;
     }
 
     Souris(int poids, String couleur) {
@@ -82,6 +85,7 @@ public class Souris {
         this._esperanceVie = ESPERANCE_VIE_DEFAULT;
         this._clonee = false;
         System.out.println("Une nouvelle souris!");
+        _compteur +=1;
     }
     
     Souris(Souris souris){
@@ -91,6 +95,7 @@ public class Souris {
         this._esperanceVie = souris._esperanceVie * 4/5;
         this._clonee = true;
         System.out.println("Clone d'une Souris!");
+        _compteur +=1;
     }
 
     @Override
@@ -117,5 +122,11 @@ public class Souris {
         while (_age < _esperanceVie){
             vieillir();
         }
+    }
+
+    public static String Compteur(){
+        String result;
+        result= "Il y a "+ _compteur + " souris";
+        return result;
     }
 }
